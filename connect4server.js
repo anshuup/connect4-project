@@ -32,7 +32,7 @@ let userMode;
 
 
 app.get("/",(req,res) => {
-	res.sendFile(path.join(__dirname, "connect4.html"))
+	res.sendFile(path.join(__dirname, "/connect4.html"))
 })
 app.get("/playGuest",(req,res)=>{
 	res.sendFile(path.join(__dirname, "/playGuest.html"))
@@ -823,8 +823,9 @@ function displayfriendStat(req,res,next){
 	})
 	next()
 }
+const port = process.env.PORT || 3000
 
-http.listen(3000,() =>{
+http.listen(port,() =>{
 	console.log('Server running at http://127.0.0.1:3000/');
 });
 let color = "red"
