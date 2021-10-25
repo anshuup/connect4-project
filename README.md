@@ -19,12 +19,12 @@ Files/folders included:
  
  	playGuest.html 		: When User clicks on Play as Guest button, this page loads
 
- folders:
-	
-  	public:
+ folders structure:
+ 
+ 	public:
     		css:
       			connect4.css			: placement/styling for each html/pug page
- 		images: contains the required image for the pages
+ 		images	: contains the required image for the pages
     
     		JavaScript:
       			connect4_businessLogic.js - Contains JavaScript of business logic which runs in node.js console
