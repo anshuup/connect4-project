@@ -1,0 +1,54 @@
+html
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible' content='IE=edge')
+    title Connect4
+    link(rel='stylesheet' href='/css/connect4.css')
+    script(src='/javascript/connect4.js' type='text/javascript')
+    script(src='/javascript/createGame.js' type='text/javascript')
+  body(onload= "changeColorStat()")
+    #backgroundSq
+      button#exitButtonOnPage(onclick='exitDialogue()') Back
+      #info
+        h1#userVal  #{winUser} Statistics
+        h4#numWin(style="color:green") Win : #{win}
+        h4#numLost(style="color:red") Lost: #{lost}
+        h4#gamePlayed Number of games played: #{numGame}
+        h4#winPercent Winning Percentage: #{winRate} %
+      #header
+        table#table1
+          tbody
+            tr
+              td#player Player Name
+              td#opponent Opponent Name
+              td#statusWinLose Win/Lose
+              td#timeGamePlayed Time Game Played
+      - var count=0
+      #header1
+        each item in array.val
+          table#table2
+            tbody
+              tr
+                if(item.gameStat == "win")
+                  td#player1(style="color:green") #{item.playerName}
+                  td#player1GameHist(style="color:green") #{item.gameHistory}
+                  td#player1GameStat(style="color:green") #{item.gameStat}
+                  td#player1GameTime(style="color:green") #{item.gameTime}
+                else if(item.gameStat == "lose")
+                  td#player1(style="color:red") #{item.playerName}
+                  td#player1GameHist(style="color:red") #{item.gameHistory}
+                  td#player1GameStat(style="color:red") #{item.gameStat}
+                  td#player1GameTime(style="color:red") #{item.gameTime}
+    div#currMode #{userMode}
+    if userMode == "dark"
+      div.darkSwitch
+        input#togBtn1(type='checkbox' checked)
+        .darkSlider.darkround(onclick='changeMode()')
+          span.darkon Dark
+          span.darkoff Light
+    else if userMode == "light"
+      div.darkSwitch
+        input#togBtn1(type='checkbox')
+        .darkSlider.darkround(onclick='changeMode()')
+          span.darkon Dark
+          span.darkoff Light
