@@ -1,0 +1,39 @@
+{
+  "firstname": "Anna",
+  "lastname": "Smith",
+  "userid": "annasmith",
+  "passwd": "annasmith",
+  "win": 2,
+  "loss": 2,
+  "tied": 0,
+  "numGamePlayed": 4,
+  "winPercentage": "50.00",
+  "status": "public",
+  "loggedin": "no",
+  "opponent": "",
+  "friends": [
+    "janedoe"
+  ],
+  "friendReq": [
+    "johndoe"
+  ],
+  "gameHistory": [
+    "johndoe",
+    "johndoe",
+    "johndoe",
+    "johndoe"
+  ],
+  "gameTime": [
+    "Sun Dec 06",
+    "Sun Dec 06",
+    "Sun Dec 06",
+    "Sun Dec 06"
+  ],
+  "gameStatus": [
+    "lose",
+    "lose",
+    "win",
+    "win"
+  ],
+  "mode": "light"
+}
