@@ -9,6 +9,7 @@ let array = {"key":[]}
 let app = express();
 const http = require('http').createServer(app);
 const io = require('socket.io')(http);
+const port = process.env.PORT || 3000
 
 app.set("view engine", "pug");
 app.use(express.static(__dirname + "/public"))
@@ -823,7 +824,6 @@ function displayfriendStat(req,res,next){
 	})
 	next()
 }
-const port = process.env.PORT || 3000
 
 http.listen(port,() =>{
 	console.log('Server running at http://127.0.0.1:3000/');
