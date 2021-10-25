@@ -31,6 +31,7 @@ Files/folders included:
       			connecct4_tournamnet.js - contains JavaScript of connect4_tournament.html
       			connect4.js - Contains JavaScript of connect4.html, afterlogInPage.html
       			createGame.js - contains JavaScript of connect4_gamePage.html, afterlogInPage.html
+			
   	userInfo - contains all the json file of each user
 
   	views -- contains pug files
