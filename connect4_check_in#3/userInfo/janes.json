@@ -1,0 +1,22 @@
+{
+  "firstname": "Jane",
+  "lastname": "Smith",
+  "userid": "janes",
+  "passwd": "janes",
+  "win": 0,
+  "loss": 0,
+  "tied": 0,
+  "numGamePlayed": 0,
+  "winPercentage": 0,
+  "status": "private",
+  "loggedin": "no",
+  "opponent": "",
+  "friends": [
+    "johndoe"
+  ],
+  "friendReq": [],
+  "gameHistory": [],
+  "gameTime": [],
+  "gameStatus": [],
+  "mode": "light"
+}
