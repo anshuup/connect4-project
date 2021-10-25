@@ -32,7 +32,7 @@ let userMode;
 
 
 app.get("/",(req,res) => {
-	res.sendFile(path.join(__dirname, "/connect4.html"))
+	res.sendFile(path.join(__dirname, "connect4.html"))
 })
 app.get("/playGuest",(req,res)=>{
 	res.sendFile(path.join(__dirname, "/playGuest.html"))
