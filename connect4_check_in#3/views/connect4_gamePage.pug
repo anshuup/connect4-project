@@ -1,0 +1,63 @@
+html
+  head
+    meta(http-equiv='X-UA-Compatible' content='IE=edge')
+    title Game Page
+    link(rel='stylesheet' href='/css/connect4.css')
+    script(src='/javascript/connect4.js' type='text/javascript')
+  body(onload='createButton();joinGame();changeColorBasedOnMode()')
+    #backgroundSq
+      h4#userTurn
+      h4#assignColor
+      #gameBox
+        #sqBox
+        #playersInfo
+          #userYnameOnTop #{usery}
+          #yellowBox
+            #innerYelloBox
+              img#leftUser(src='/images/userFace1.PNG')
+          div#userRnameOnTop #{userR}
+          #RedBox
+            #innerRedBox
+              img#rightUser(src='/images/userFace.PNG')
+      button#quitButtonOnPage(onclick='quitDialogue()') Quit
+      button#prevButtonOnPage Exit
+      #boxAfterWinLose.modal
+        .modal-content
+          .modal-header
+            span#close.close &times;
+          .modal-body
+            p#winner Yellow wins
+          .modal-footer
+            button#playAgainButton(onclick='createNewGame("reg")') Play Again
+            button#nextButton(onclick='playTournament("tournament")') Next &rsaquo;&rsaquo;
+            button#exitButton(onclick='exitDialogue()') Exit
+      #timer
+      #lineContainerRed
+        #lineRed
+      #lineContainerYellow
+        #lineYellow
+      ul#name
+    #chatSection
+      #chatTop(onclick='hideChatWindow()')
+        div#chatbtn
+        h3#chatText Chat
+      #chatMiddle
+      #chatBottom
+        input#chatField(type='text' placeholder='Type a Message...')
+        button#sendButton(onclick='sendMsg()') &uarr;
+    div#currMode #{userMode}
+    if userMode == "dark"
+      div.darkSwitch
+        input#togBtn1(type='checkbox' checked)
+        .darkSlider.darkround(onclick='changeMode()')
+          span.darkon Dark
+          span.darkoff Light
+    else if userMode == "light"
+      div.darkSwitch
+        input#togBtn1(type='checkbox')
+        .darkSlider.darkround(onclick='changeMode()')
+          span.darkon Dark
+          span.darkoff Light
+    div#newMessageAlert New Message
+    script(src="/socket.io/socket.io.js")
+    script(src='/javascript/createGame.js' type='text/javascript')
