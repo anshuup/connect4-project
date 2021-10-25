@@ -32,7 +32,14 @@
 #logInButton, #createAccount{
   background-color: grey;
 }
-#logInButton:hover, #howToPlay:hover{
+#logInButton:hover{
+  background-color: grey;
+  color: white;
+  transition: 0.3s ease;
+  cursor: pointer;
+  border-style: none;
+}
+#howToPlay:hover{
   background-color: darkblue;
   color: white;
   transition: 0.3s ease;
@@ -40,7 +47,7 @@
   border-style: none;
 }
 #createAccount:hover{
-  background-color: darkblue;
+  background-color: grey;
   color: white;
   transition: 0.3s ease;
   cursor: pointer;
