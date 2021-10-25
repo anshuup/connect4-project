@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Tournament</title>
+    <link rel="stylesheet" href="/css/connect4.css">
+    <script src="/javascript/createGame.js" type="text/javascript"></script>
+    <script src="/javascript/connect4_tournament.js" type="text/javascript"></script>
+  </head>
+    <body id="gamePageBody" onload="createNewGame('tournament')">
+      <!-- game page contained with players and box which allows players to play game-->
+      <div id="backgroundSq">
+        <div id="gameBox">
+          <div id="sqBox" class="sqBox"></div>
+          <div id="playersInfo">
+            <div id="userYnameOnTop">User Y</div>
+            <div id="yellowBox">
+              <div id="innerYelloBox">
+                <img id="leftUser" src="./images/userFace1.PNG">
+              </div>
+            </div>
+            <div id="userRnameOnTop">User R</div>
+            <div id="RedBox">
+              <div id="innerRedBox">
+                <img id="rightUser" src="./images/userFace.PNG">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="boxAfterWinLose" class="modal">
+        <!-- Modal content - opens when any user wins and three buttons displayed as per need -->
+          <div class="modal-content">
+            <div class="modal-header">
+              <span class="close" id= "close">&times;</span>
+            </div>
+            <div class="modal-body">
+              <p id="winner">Yellow wins</p>
+            </div>
+            <div class="modal-footer">
+              <button id="playAgainButton" onclick="createNewGame()">Play Again</button>
+              <button id="nextButton" onclick="playTournament()">Next &#8250;&#8250;</button>
+              <button id="exitButton" onclick="exitDialogue()">Exit</button>
+            </div>
+          </div>
+        </div>
+        <div id="timer"></div>
+        <div id="lineContainerRed">
+          <div id="lineRed"></div>
+        </div>
+        <div id="lineContainerYellow">
+          <div id="lineYellow"></div>
+        </div>
+      </div>
+    </body>
+</html>
