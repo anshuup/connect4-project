@@ -1,0 +1,86 @@
+html
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible' content='IE=edge')
+    title Connect4
+    link(rel='stylesheet' href='/css/connect4.css')
+    link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
+    script(src='/javascript/connect4.js' type='text/javascript')
+    script(src='/javascript/createGame.js' type='text/javascript')
+  body(onload="changeColorFriend()")
+    div#backgroundSq
+      button#exitButtonOnPage(onclick='exitDialogue()') Back
+      // create 3 main page sections for search bars, active games and chat
+      div#friendInfo
+        input#newFriendSearch(type='text' placeholder='Find New Friends')
+        button#friendSearchButton(type="button", onclick='findNewFriend(document.getElementById("newFriendSearch").value)')
+          i.fa.fa-search
+        div#friendReqSection Friend Request
+          div#friendReqTable
+            each friend in friendReqArray
+              table#friends
+                tbody
+                  tr
+                      td(id=friend class= 'friendsReqList') #{friend}
+                      td(id="acceptButton" class=friend onclick='acceptFriendReq(this.className)') Accept
+                      td(id="rejectButton" class=friend onclick='rejectFriendReq(this.className)') Reject
+        div#friendSearchSection Friends List
+          div#friendsListTable
+            each friend, onoff in listOfFriends
+              table#friends
+                tbody
+                  tr
+                    if loggedInFriends[onoff] === "yes"
+                      td#dot(style={background: '#31A24C'})
+                      td#friendsName.friendsList #{friend}
+                      td(id= friend, class="chatButton" onclick='showFriendStat(this.id)') Stat
+                      td(id= friend, class="chatButton" onclick='unfriend(this.id)') Unfriend
+                    else if loggedInFriends[onoff] === "no"
+                        td#dot(style={background: 'grey'})
+                        td#friendsName.friendsList #{friend}
+                        td(id= friend, class="chatButton" onclick='showFriendStat(this.id)') Stat
+                        td(id= friend, class="chatButton" onclick='unfriend(this.id)') Unfriend
+                    else
+        h5#name1
+        button#newFriendButton1(onclick='makeFriends(document.getElementById("name1").innerHTML)') Add Friend
+        // popup to display player stats onclick "stats" button (doesn't work yet)
+      h1#privateAccount
+      div#statPopUp
+        div#userHeader
+        div#statInfo
+          h5#win Win   :
+          h5#lose Lose :
+          h5#numGamePlayed Number of Games Played :
+          h5#winRate Winning Percentage :
+        div#gameSum
+          h5#gameSummaryHeader Game Summary
+        #tableheader
+          table#table1GameSum
+            tbody
+              tr
+                td#playerheader Player Name
+                td#opponentheader Opponent Name
+                td#statusWinLoseheader Win/Lose
+                td#timeGamePlayedheader Time Game Played
+        #gameSumHeader
+          table#table2GameSum
+            tbody
+              tr
+                td#playerSum(style="color:green") Anshu
+                td#playerSumGameHist(style="color:green") patel
+                td#playerSumGameStat(style="color:green") lose
+                td#playerSumGameTime(style="color:green") Sat Nov 21
+    div#currMode #{userMode}
+    if userMode == "dark"
+      div.darkSwitch
+        input#togBtn1(type='checkbox' checked)
+        .darkSlider.darkround(onclick='changeMode()')
+          span.darkon Dark
+          span.darkoff Light
+    else if userMode == "light"
+      div.darkSwitch
+        input#togBtn1(type='checkbox')
+        .darkSlider.darkround(onclick='changeMode()')
+          span.darkon Dark
+          span.darkoff Light
+    script(src="/socket.io/socket.io.js")
