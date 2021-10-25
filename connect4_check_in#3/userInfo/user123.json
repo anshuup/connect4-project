@@ -1,0 +1,24 @@
+{
+  "firstname": "user",
+  "lastname": "user",
+  "userid": "user123",
+  "passwd": "user1",
+  "win": 0,
+  "loss": 0,
+  "tied": 0,
+  "numGamePlayed": 0,
+  "winPercentage": "0",
+  "status": "private",
+  "mode": "light",
+  "loggedin": "no",
+  "opponent": "",
+  "friends": [
+  ],
+  "friendReq": [],
+  "gameHistory": [
+  ],
+  "gameTime": [
+  ],
+  "gameStatus": [
+  ]
+}
