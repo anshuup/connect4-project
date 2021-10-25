@@ -8,6 +8,7 @@ ID: 101082781
 visit https://connect4-gamex.herokuapp.com/ for demo
 
 Files/folders included:
+
  connect4.html			: Main HTML page
  connect4_tournament.html	: Tournament page which loads when user clicks on Play Tournament(after login)
  howToPlayPage.html		: Information regarding playing game
