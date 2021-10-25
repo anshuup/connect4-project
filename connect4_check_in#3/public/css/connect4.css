@@ -29,6 +29,9 @@
   border-radius: 5px;
   font-size: 1.5vw;
 }
+#logInButton, #createAccount{
+  background-color: grey;
+}
 #logInButton:hover, #howToPlay:hover{
   background-color: darkblue;
   color: white;
